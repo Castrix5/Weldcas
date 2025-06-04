@@ -10,6 +10,7 @@
     <title>
       Weldcas: Equipos de Calistenia de Calidad para Tu Rutina en Casa
     </title>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -28,83 +29,97 @@
         "url": "https://weldcas.com"
       }
     </script>
-    <!-- links -->
-    <!--Fonts -->
+
+    <!-- Preconnect para Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Titillium+Web:wght@600;700&display=swap"
       rel="stylesheet"
     />
-    <!--AOS -->
+
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <!--CSS -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
   </head>
 
-  <body class="modo-noche">
-    <div class="modo-oscuro-container">
-      <button id="modo-oscuro-toggle" title="Modo oscuro">🌙</button>
-    </div>
+  <body>
     <!-- Hero -->
-    <header class="hero" id="hero">
+    <header class="hero" id="hero" role="banner" aria-label="Sección principal">
       <img src="img/logo.png" alt="Logo Weldcas" class="logo" />
+
       <div class="hero-contenido">
         <h1>Diseñamos tu espacio de entrenamiento</h1>
         <p>Fabricamos y distribuimos equipos para calistenia personalizados.</p>
-        <span class="subtitulo">Hecho en México, pensado para tu cuerpo.</span
-        ><br />
+        <p class="subtitulo">Hecho en México, pensado para tu cuerpo.</p>
 
-        <div class="redes-hero">
+        <nav class="redes-hero" aria-label="Redes sociales">
           <a
             href="https://www.facebook.com/profile.php?id=100072523872574&locale=es_LA"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="Facebook"
             class="facebook"
-            rel="noopener noreferrer"
           >
-            <i class="bi bi-facebook"></i>
+            <i class="bi bi-facebook" aria-hidden="true"></i>
           </a>
           <a
             href="https://www.instagram.com/weldcas2/"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="Instagram"
             class="instagram"
-            rel="noopener noreferrer"
           >
-            <i class="bi bi-instagram"></i>
+            <i class="bi bi-instagram" aria-hidden="true"></i>
           </a>
           <a
             href="https://wa.me/525568632006"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="WhatsApp"
             class="whatsapp"
-            rel="noopener noreferrer"
           >
-            <i class="bi bi-whatsapp"></i>
+            <i class="bi bi-whatsapp" aria-hidden="true"></i>
           </a>
-        </div>
+        </nav>
 
         <a href="#contacto" class="btn">Contáctanos</a>
       </div>
     </header>
 
     <!-- Productos (Carrusel) -->
-    <section class="carrusel-tarjetas" id="productos">
+    <section
+      class="carrusel-tarjetas"
+      id="productos"
+      aria-label="Nuestros productos estrella"
+    >
       <h2
         class="titulo-productos"
         data-aos="fade-up"
@@ -113,14 +128,22 @@
       >
         Nuestros Productos Estrella
       </h2>
-      <div class="contenedor-carrusel">
-        <button class="flecha izquierda">‹</button>
 
-        <div class="carrusel">
-          <div class="tarjeta">
+      <div class="contenedor-carrusel">
+        <button
+          class="flecha izquierda"
+          aria-label="Desplazar carrusel hacia la izquierda"
+          type="button"
+        >
+          ‹
+        </button>
+
+        <div class="carrusel" role="list">
+          <article class="tarjeta" role="listitem" tabindex="0">
             <img
               src="img/barra1.jpeg"
               alt="Barra de calistenia Weldcas modelo básico 1"
+              loading="lazy"
             />
             <h3>Funcionalidad</h3>
             <p>
@@ -128,12 +151,13 @@
               todas sus variantes. Diseñado para maximizar tu rutina desde casa
               o gimnasio personal. Soporta hasta 250 kg.
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta">
+          <article class="tarjeta" role="listitem" tabindex="0">
             <img
               src="img/barra11.jpeg"
               alt="Barra de calistenia Weldcas modelo básico 1"
+              loading="lazy"
             />
             <h3>Comodidad y diseño</h3>
             <p>
@@ -142,12 +166,13 @@
               repetición. Además, su estructura resistente y diseño ergonómico
               garantizan estabilidad y durabilidad.
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta">
+          <article class="tarjeta" role="listitem" tabindex="0">
             <img
               src="img/barra111.jpeg"
               alt="Barra de calistenia Weldcas modelo básico 1"
+              loading="lazy"
             />
             <h3>Comodidad y diseño</h3>
             <p>
@@ -156,12 +181,13 @@
               con estilo. Incluye puños de neopreno antideslizantes para un
               mejor agarre.
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta">
+          <article class="tarjeta" role="listitem" tabindex="0">
             <img
               src="img/barra2.jpeg"
               alt="Barra de calistenia Weldcas modelo básico 2"
+              loading="lazy"
             />
             <h3>Funciones y uso</h3>
             <p>
@@ -169,12 +195,13 @@
               todas sus variantes. Perfecto para quienes buscan un entrenamiento
               completo desde casa.
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta">
+          <article class="tarjeta" role="listitem" tabindex="0">
             <img
               src="img/barra22.jpeg"
               alt="Barra de calistenia Weldcas modelo básico 2"
+              loading="lazy"
             />
             <h3>Beneficios y diseño</h3>
             <p>
@@ -182,12 +209,13 @@
               brinda comodidad y seguridad durante cada repetición, ayudándote a
               mejorar tu rendimiento de forma eficiente.
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta">
+          <article class="tarjeta" role="listitem" tabindex="0">
             <img
               src="img/barra3.jpeg"
               alt="Barra de calistenia Weldcas modelo básico 3"
+              loading="lazy"
             />
             <h3>Funciones y uso</h3>
             <p>
@@ -195,12 +223,13 @@
               superior de tu cuerpo. Ideal para quienes se enfocan en espalda,
               hombros y brazos.
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta">
+          <article class="tarjeta" role="listitem" tabindex="0">
             <img
               src="img/barra33.jpeg"
               alt="Barra de calistenia Weldcas modelo básico 3"
+              loading="lazy"
             />
             <h3>Beneficios y diseño</h3>
             <p>
@@ -208,36 +237,61 @@
               seguro y estabilidad en cada repetición. Ideal tanto para entrenar
               en casa como al aire libre.
             </p>
-          </div>
+          </article>
           <!-- Puedes añadir más tarjetas -->
         </div>
 
-        <button class="flecha derecha">›</button>
+        <button
+          class="flecha derecha"
+          aria-label="Desplazar carrusel hacia la derecha"
+          type="button"
+        >
+          ›
+        </button>
       </div>
     </section>
 
     <!--Calculadora de costos -->
-    <section id="calculadora-entrega">
+    <section
+      id="calculadora-entrega"
+      aria-label="Calculadora de entrega a domicilio"
+    >
       <h2>Cotizar entrega a domicilio</h2>
 
-      <label for="km">
+      <p>
         <strong>
-          1. Haz clic en el mapa para marcar tu ubicación. <br />
-          2. Luego, selecciona la zona más cercana: Zona Centro o Zona Oriente. <br />
-          3. Calcularemos la distancia automáticamente. <br />
-          4. Selecciona el modelo de equipo que deseas comprar. <br />
+          1. Haz clic en el mapa para marcar tu ubicación.<br />
+          2. Luego, selecciona la zona más cercana: Zona Centro o Zona
+          Oriente.<br />
+          3. Calcularemos la distancia automáticamente.<br />
+          4. Selecciona el modelo de equipo que deseas comprar.<br />
           5. Presiona "Calcular total".
         </strong>
-      </label>
+      </p>
 
       <div
         id="mapa"
         style="height: 300px; margin: 1rem 0; border-radius: 12px"
+        role="application"
+        aria-label="Mapa para seleccionar ubicación"
+        tabindex="0"
       ></div>
 
       <div style="display: flex; gap: 1rem; margin-bottom: 1rem">
-        <button onclick="usarMetro('guelatao')">Zona Oriente</button>
-        <button onclick="usarMetro('chabacano')">Zona Centro</button>
+        <button
+          type="button"
+          onclick="usarMetro('guelatao')"
+          aria-label="Seleccionar Zona Oriente"
+        >
+          Zona Oriente
+        </button>
+        <button
+          type="button"
+          onclick="usarMetro('chabacano')"
+          aria-label="Seleccionar Zona Centro"
+        >
+          Zona Centro
+        </button>
       </div>
 
       <div class="input-con-unidad">
@@ -248,50 +302,62 @@
           min="0"
           step="1"
           readonly
+          aria-label="Distancia en kilómetros"
         />
-        <span class="unidad">km</span>
+        <span class="unidad" aria-hidden="true">km</span>
       </div>
 
-      <label for="modelo"><strong>Selecciona un modelo:</strong></label>
-      <div class="tarjetas-modelos">
-        <!-- Tarjetas de modelos -->
-        <label class="tarjeta-calculadora">
-          <input type="radio" name="modelo" value="850" checked />
-          <h5>Modelo #1</h5>
-          <p>$850</p>
-        </label>
+      <fieldset>
+        <legend><strong>Selecciona un modelo:</strong></legend>
 
-        <label class="tarjeta-calculadora">
-          <input type="radio" name="modelo" value="700" />
-          <h5>Modelo #2</h5>
-          <p>$700</p>
-        </label>
+        <div class="tarjetas-modelos">
+          <label class="tarjeta-calculadora" for="modelo1">
+            <input
+              type="radio"
+              id="modelo1"
+              name="modelo"
+              value="850"
+              checked
+            />
+            <h5>Modelo #1</h5>
+            <p>$850</p>
+          </label>
 
-        <label class="tarjeta-calculadora">
-          <input type="radio" name="modelo" value="550" />
-          <h5>Modelo #3</h5>
-          <p>$550</p>
-        </label>
+          <label class="tarjeta-calculadora" for="modelo2">
+            <input type="radio" id="modelo2" name="modelo" value="700" />
+            <h5>Modelo #2</h5>
+            <p>$700</p>
+          </label>
 
-        <!-- Tarjeta de instalación -->
-        <label class="tarjeta-calculadora">
-          <input type="radio" id="instalacion" />
-          <h5>Instalación</h5>
-          <p>+ $60</p>
-        </label>
-      </div>
+          <label class="tarjeta-calculadora" for="modelo3">
+            <input type="radio" id="modelo3" name="modelo" value="550" />
+            <h5>Modelo #3</h5>
+            <p>$550</p>
+          </label>
 
-      <button onclick="calcularEntrega()">Calcular total</button>
+          <label class="tarjeta-calculadora" for="instalacion">
+            <input type="checkbox" id="instalacion" />
+            <h5>¿Deseas instalación?</h5>
+            <p>+ $60</p>
+          </label>
+        </div>
+      </fieldset>
 
-      <p id="resultado"></p>
+      <button type="button" onclick="calcularEntrega()">Calcular total</button>
+
+      <p id="resultado" aria-live="polite"></p>
     </section>
 
     <!-- Sobre Nosotros -->
-    <section class="sobre-nosotros" id="nosotros">
+    <section
+      class="sobre-nosotros"
+      id="nosotros"
+      aria-labelledby="titulo-sobre-nosotros"
+    >
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-6" data-aos="fade-right">
-            <h2>Sobre Weldcas</h2>
+            <h2 id="titulo-sobre-nosotros">Sobre Weldcas</h2>
             <p>
               En <strong>Weldcas</strong>, somos una empresa 100% mexicana
               dedicada a la fabricación y distribución de equipos para
@@ -310,15 +376,17 @@
               src="img/taller1.jpg"
               alt="Taller de Weldcas"
               class="img-fluid rounded shadow"
+              loading="lazy"
             />
           </div>
         </div>
       </div>
-      <section class="timeline">
-        <h3>Nuestra Historia</h3>
+
+      <section class="timeline" aria-labelledby="titulo-nuestra-historia">
+        <h3 id="titulo-nuestra-historia">Nuestra Historia</h3>
         <div class="timeline-container">
-          <div class="timeline-item">
-            <span class="timeline-date">2020</span>
+          <article class="timeline-item" aria-label="Año 2020">
+            <time class="timeline-date" datetime="2020">2020</time>
             <p>
               Weldcas nació en plena pandemia, impulsado por la necesidad de
               ofrecer una alternativa real para que las personas pudieran
@@ -326,9 +394,10 @@
               gimnasios cerraban y el encierro afectaba tanto al cuerpo como a
               la mente, decidimos actuar.
             </p>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2023</span>
+          </article>
+
+          <article class="timeline-item" aria-label="Año 2023">
+            <time class="timeline-date" datetime="2023">2023</time>
             <p>
               Lo que inició como una respuesta a la incertidumbre y el encierro,
               hoy se ha convertido en una comunidad comprometida con la
@@ -337,9 +406,10 @@
               casa, fortalecer el cuerpo y prevenir problemas como la depresión,
               el sedentarismo y la ansiedad.
             </p>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-date">2025</span>
+          </article>
+
+          <article class="timeline-item" aria-label="Año 2025">
+            <time class="timeline-date" datetime="2025">2025</time>
             <p>
               Con el tiempo, nos consolidamos como una marca con propósito.
               Expandimos nuestra presencia, comenzamos a vender en línea para
@@ -348,201 +418,264 @@
               físico y mental. Hoy, seguimos fieles a nuestra misión: que nadie
               se detenga, sin importar las circunstancias.
             </p>
-          </div>
+          </article>
         </div>
       </section>
-      <div class="stats-nosotros">
-        <div>
+
+      <div
+        class="stats-nosotros"
+        role="list"
+        aria-label="Estadísticas de Weldcas"
+      >
+        <div role="listitem">
           <strong>+1000</strong>
           <p>Equipos vendidos</p>
         </div>
-        <div>
+        <div role="listitem">
           <strong>5 años</strong>
           <p>de experiencia</p>
         </div>
-        <div>
-          <strong>Hecho en Mexico 🇲🇽</strong>
+        <div role="listitem">
+          <strong>Hecho en México 🇲🇽</strong>
           <p>con orgullo</p>
         </div>
       </div>
     </section>
+
     <!-- Testimonios -->
-    <section class="testimonios">
-      <h2 class="titulo-testimonios">Testimonios</h2>
-      <div class="carrusel-testimonios">
+    <section class="testimonios" aria-labelledby="titulo-testimonios">
+      <h2 id="titulo-testimonios" class="titulo-testimonios">Testimonios</h2>
+      <div
+        class="carrusel-testimonios"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Testimonios de clientes"
+      >
         <div class="pista">
           <!-- Testimonio 1 -->
-          <div class="tarjeta-testimonio">
-            <img src="img/entre1.jpeg" alt="Cliente 1" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre1.jpeg"
+              alt="Cliente Jose Mendoza"
+              loading="lazy"
+            />
             <p>
               “La entrega fue rápida y sin complicaciones. Todo llegó en
-              perfecto estado y listo para entrenar.”"<br />
-              -Jose Mendoza.
+              perfecto estado y listo para entrenar.”<br />
+              <strong>- Jose Mendoza.</strong>
             </p>
-          </div>
+          </article>
 
           <!-- Testimonio 2 -->
-          <div class="tarjeta-testimonio">
-            <img src="img/insta1.jpeg" alt="Cliente 2" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/insta1.jpeg"
+              alt="Cliente Jorge Cruz"
+              loading="lazy"
+            />
             <p>
               “Weldcas se encargó de la instalación y lo dejaron todo
               funcionando perfecto. ¡Un servicio de primera!”<br />
-              -Jorge Cruz.
+              <strong>- Jorge Cruz.</strong>
             </p>
-          </div>
+          </article>
 
           <!-- Testimonio 3 -->
-          <div class="tarjeta-testimonio">
-            <img src="img/entre2.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre2.jpeg"
+              alt="Cliente Guillermo Ocelotl"
+              loading="lazy"
+            />
             <p>
               “Recibí el pedido antes de lo esperado. Excelente embalaje y
               atención en el seguimiento.”<br />
-              -Guillermo Ocelotl.
+              <strong>- Guillermo Ocelotl.</strong>
             </p>
-          </div>
+          </article>
 
-          <!-- Repetir para efecto infinito -->
-          <div class="tarjeta-testimonio">
-            <img src="img/insta2.jpeg" alt="Cliente 1" />
-
+          <!-- Testimonios adicionales (repetidos para efecto infinito) -->
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/insta2.jpeg"
+              alt="Cliente Alfredo Salas"
+              loading="lazy"
+            />
             <p>
               “El equipo de Weldcas vino, lo instaló y me explicó todo. Se nota
               el profesionalismo.”<br />
-              -Alfredo Salas.
+              <strong>- Alfredo Salas.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/entre3.jpeg" alt="Cliente 2" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre3.jpeg"
+              alt="Cliente Antonio Zepeda"
+              loading="lazy"
+            />
             <p>
               “Todo llegó impecable. Se nota la calidad desde el empaque hasta
               el producto final.”<br />
-              -Antonio Zepeda.
+              <strong>- Antonio Zepeda.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/insta3.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/insta3.jpeg"
+              alt="Cliente Cris Guzman"
+              loading="lazy"
+            />
             <p>
               “La instalación fue rápida y sin problemas. Los chicos súper
               amables y atentos a los detalles.”<br />
-              -Cris Guzman.
+              <strong>- Cris Guzman.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/entre4.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre4.jpeg"
+              alt="Cliente Felipe Diaz"
+              loading="lazy"
+            />
             <p>
               “Llegó antes de lo prometido. Muy profesionales y atentos al
               detalle.”<br />
-              -Felipe Diaz.
+              <strong>- Felipe Diaz.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/insta4.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/insta4.jpeg"
+              alt="Cliente Jorge Martinez"
+              loading="lazy"
+            />
             <p>
               “Vinieron a instalarlo a mi casa y quedó firme y bien ajustado.
               ¡Excelente atención!”<br />
-              -Jorge Martinez.
+              <strong>- Jorge Martinez.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/entre5.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre5.jpeg"
+              alt="Cliente Francisco Muñoz"
+              loading="lazy"
+            />
             <p>
               “Llegó antes de lo prometido. Muy profesionales y atentos al
               detalle.”<br />
-              Francisco Muñoz.
+              <strong>- Francisco Muñoz.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/insta5.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/insta5.jpeg"
+              alt="Cliente Ernesto Carrasco"
+              loading="lazy"
+            />
             <p>
               “Me encantó que ellos se encargaran de todo. Solo tuve que elegir
               el lugar y listo.”<br />
-              -Ernesto Carrasco.
+              <strong>- Ernesto Carrasco.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/entre6.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre6.jpeg"
+              alt="Cliente Miguel Dionicio"
+              loading="lazy"
+            />
             <p>
               “Excelente embalaje y envío. Todo llegó sin golpes ni piezas
               faltantes.”<br />
-              -Miguel Dionicio.
+              <strong>- Miguel Dionicio.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/insta6.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/insta6.jpeg"
+              alt="Cliente Salazar Vazquez"
+              loading="lazy"
+            />
             <p>
               “Instalaron la barra en mi jardín y quedó espectacular. Muy
               prolijos con el trabajo.”<br />
-              -Salazar Vazquez.
+              <strong>- Salazar Vazquez.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/entre7.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre7.jpeg"
+              alt="Cliente Erick Valle"
+              loading="lazy"
+            />
             <p>
               “Recibí el paquete en solo dos días. Muy buena experiencia de
               compra.”<br />
-              -Erick Valle.
+              <strong>- Erick Valle.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/insta7.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/insta7.jpeg"
+              alt="Cliente Juan Estrada"
+              loading="lazy"
+            />
             <p>
               “El equipo técnico fue puntual y detallista. Quedó perfecto y
               súper seguro.”<br />
-              -Juan Estrada.
+              <strong>- Juan Estrada.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/entre8.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre8.jpeg"
+              alt="Cliente Juan Salome"
+              loading="lazy"
+            />
             <p>
               “La entrega fue clara, rápida y segura. Da confianza comprar
               así.”<br />
-              -Juan Salome.
+              <strong>- Juan Salome.</strong>
             </p>
-          </div>
+          </article>
 
-          <div class="tarjeta-testimonio">
-            <img src="img/entre8.jpeg" alt="Cliente 3" />
-
+          <article class="tarjeta-testimonio" tabindex="0">
+            <img
+              src="img/entre8.jpeg"
+              alt="Cliente Alexander Ponce"
+              loading="lazy"
+            />
             <p>
               “El pedido llegó incluso antes de la fecha estimada. Muy buena
               coordinación y comunicación durante todo el proceso. ¡Un 10 para
               la logística de Weldcas!”<br />
-              -Alexander Ponce.
+              <strong>- Alexander Ponce.</strong>
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Contacto -->
-    <section id="contacto" class="seccion-contacto">
+    <section
+      id="contacto"
+      class="seccion-contacto"
+      aria-labelledby="titulo-contacto"
+    >
       <div class="container">
-        <h2>Contáctanos</h2>
+        <h2 id="titulo-contacto">Contáctanos</h2>
         <p class="subtitulo">
           ¿Tienes dudas o quieres un presupuesto? Escríbenos o llámanos,
           ¡estamos para ayudarte!
@@ -550,7 +683,10 @@
 
         <div class="contenido-contacto">
           <!-- Columna izquierda -->
-          <div class="columna-izquierda">
+          <aside
+            class="columna-izquierda"
+            aria-label="Información de contacto y ubicación"
+          >
             <!-- Mapa -->
             <div class="mapa">
               <iframe
@@ -558,23 +694,34 @@
                 width="100%"
                 height="300"
                 style="border: 0"
-                allowfullscreen=""
+                allowfullscreen
                 loading="lazy"
+                title="Mapa ubicación de Weldcas en Ciudad de México"
               ></iframe>
             </div>
 
             <!-- Información y CTA -->
-            <div class="info-contacto">
+            <section class="info-contacto">
               <p>
-                <i class="fas fa-phone"></i> <strong>Tel:</strong> +52
-                5568632006
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <strong>Tel:</strong>
+                <a
+                  href="tel:+525568632006"
+                  aria-label="Teléfono Weldcas +52 556 863 2006"
+                  >+52 5568632006</a
+                >
               </p>
               <p>
-                <i class="fas fa-envelope"></i>
-                <strong>Email:</strong> contacto@weldcas.com
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <strong>Email:</strong>
+                <a
+                  href="mailto:contacto@weldcas.com"
+                  aria-label="Correo electrónico Weldcas"
+                  >contacto@weldcas.com</a
+                >
               </p>
               <p>
-                <i class="fas fa-map-marker-alt"></i>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                 <strong>Ubicación:</strong> Calle Hidalgo 171, Mzn. 3B, Col.
                 Santa María Aztahuacan, Iztapalapa, CP 09570, Ciudad de
                 México.<br />
@@ -582,73 +729,108 @@
                 en algunos metros de la CDMX.
               </p>
 
-              <div class="redes-sociales">
+              <nav
+                class="redes-sociales"
+                aria-label="Redes sociales de Weldcas"
+              >
                 <a
                   href="https://wa.me/525568632006"
                   target="_blank"
-                  class="btn-wsp"
                   rel="noopener noreferrer"
-                  ><i class="fab fa-whatsapp"></i
-                ></a>
+                  class="btn-wsp"
+                  aria-label="WhatsApp Weldcas"
+                >
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                </a>
                 <a
                   href="https://www.facebook.com/profile.php?id=100072523872574&locale=es_LA"
                   target="_blank"
                   rel="noopener noreferrer"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a href="https://www.instagram.com/weldcas2/" target="_blank"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </div>
+                  aria-label="Facebook Weldcas"
+                >
+                  <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/weldcas2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram Weldcas"
+                >
+                  <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+              </nav>
 
               <a
                 href="https://wa.me/525568632006"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="btn-contactar"
-                >¡Contáctanos por WhatsApp!</a
+                aria-label="Contactar a Weldcas por WhatsApp"
               >
-            </div>
-          </div>
+                ¡Contáctanos por WhatsApp!
+              </a>
+            </section>
+          </aside>
 
           <!-- Columna derecha (formulario) -->
-          <div class="columna-derecha">
+          <section class="columna-derecha" aria-label="Formulario de contacto">
             <form
               id="formulario"
               action="https://formspree.io/f/xpwdvozg"
               method="POST"
               class="formulario-contacto"
+              aria-describedby="mensaje-exito"
             >
+              <label for="nombre">Nombre</label>
               <input
                 type="text"
+                id="nombre"
                 name="nombre"
                 placeholder="Tu nombre"
                 required
               />
+
+              <label for="email">Correo electrónico</label>
               <input
                 type="email"
+                id="email"
                 name="email"
                 placeholder="Tu correo electrónico"
                 required
               />
+
+              <label for="mensaje">Mensaje</label>
               <textarea
+                id="mensaje"
                 name="mensaje"
                 placeholder="Escribe tu mensaje..."
                 rows="4"
                 required
               ></textarea>
+
               <button type="submit">Enviar mensaje</button>
             </form>
-            <div id="mensaje-exito" class="mensaje-exito" style="display: none">
+
+            <div
+              id="mensaje-exito"
+              class="mensaje-exito"
+              style="display: none"
+              role="alert"
+              aria-live="assertive"
+            >
               ¡Gracias por tu mensaje! Te responderemos pronto.
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer
+      class="footer"
+      role="contentinfo"
+      aria-label="Pie de página Weldcas"
+    >
       <div class="container-footer">
         <div class="footer-logo">
           <h3>Weldcas</h3>
@@ -656,36 +838,42 @@
           <img src="img/logo.png" alt="Logo Weldcas" class="logo-footer" />
         </div>
 
-        <div class="footer-links">
+        <nav
+          class="footer-links"
+          aria-label="Navegación principal del pie de página"
+        >
           <a href="#hero">Inicio</a>
           <a href="#productos">Productos</a>
           <a href="#nosotros">Nosotros</a>
           <a href="#contacto">Contacto</a>
-        </div>
+        </nav>
 
-        <div class="footer-redes">
+        <nav class="footer-redes" aria-label="Redes sociales de Weldcas">
           <a
             href="https://wa.me/525568632006"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="WhatsApp"
-            ><i class="fab fa-whatsapp"></i
-          ></a>
+            aria-label="WhatsApp Weldcas"
+          >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          </a>
           <a
             href="https://www.facebook.com/profile.php?id=100072523872574"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Facebook"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
+            aria-label="Facebook Weldcas"
+          >
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
           <a
             href="https://www.instagram.com/weldcas2/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-          ></a>
-        </div>
+            aria-label="Instagram Weldcas"
+          >
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+        </nav>
       </div>
 
       <div class="footer-copy">
@@ -705,9 +893,12 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
     <script src="js/main.js" defer></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </body>
 </html>
