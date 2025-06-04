@@ -159,68 +159,76 @@ const btnModo = document.getElementById('modo-oscuro-toggle');
 
 let ubicacionUsuario = null;
 
-  const metros = {
-    guelatao: [19.388937, -99.063213],
-    chabacano: [19.409162, -99.135152],
-  };
+const metros = {
+  guelatao: [19.388937, -99.063213],
+  chabacano: [19.409162, -99.135152],
+};
 
-  const mapa = L.map("mapa").setView([19.4, -99.12], 11);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "© OpenStreetMap",
-  }).addTo(mapa);
+const mapa = L.map("mapa").setView([19.4, -99.12], 11);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution: "© OpenStreetMap",
+}).addTo(mapa);
 
-  let marcador = null;
+let marcador = null;
 
-  mapa.on("click", function (e) {
-    if (marcador) {
-      mapa.removeLayer(marcador);
-    }
-    ubicacionUsuario = e.latlng;
-    marcador = L.marker(ubicacionUsuario).addTo(mapa);
-  });
+mapa.on("click", function (e) {
+  if (marcador) {
+    mapa.removeLayer(marcador);
+  }
+  ubicacionUsuario = e.latlng;
+  marcador = L.marker(ubicacionUsuario).addTo(mapa);
+});
 
-  function usarMetro(nombreMetro) {
-    if (!ubicacionUsuario) {
-      alert("Primero selecciona tu ubicación en el mapa.");
-      return;
-    }
-
-    const metroCoords = metros[nombreMetro];
-    const distancia = mapa.distance(ubicacionUsuario, metroCoords) / 1000; // metros a km
-    document.getElementById("km").value = distancia.toFixed(2);
+function usarMetro(nombreMetro) {
+  if (!ubicacionUsuario) {
+    alert("Primero selecciona tu ubicación en el mapa.");
+    return;
   }
 
-  function calcularEntrega() {
-    const km = parseFloat(document.getElementById("km").value);
-    const modeloRadios = document.getElementsByName("modelo");
-    let modelo = 0;
-    for (let i = 0; i < modeloRadios.length; i++) {
-      if (modeloRadios[i].checked) {
-        modelo = parseFloat(modeloRadios[i].value);
-        break;
-      }
+  const metroCoords = metros[nombreMetro];
+  const distancia = mapa.distance(ubicacionUsuario, metroCoords) / 1000; // metros a km
+  document.getElementById("km").value = distancia.toFixed(2);
+}
+
+function calcularEntrega() {
+  const km = parseFloat(document.getElementById("km").value);
+  const modeloRadios = document.getElementsByName("modelo");
+  const instalacion = document.getElementById("instalacion").checked; // Nuevo checkbox
+
+  let modelo = 0;
+  for (let i = 0; i < modeloRadios.length; i++) {
+    if (modeloRadios[i].checked) {
+      modelo = parseFloat(modeloRadios[i].value);
+      break;
     }
-
-    const tarifaBase = 50;
-    const tarifaPorKmExtra = 6;
-    const kmBase = 2;
-
-    if (isNaN(km) || km < 0) {
-      document.getElementById("resultado").textContent =
-        "Por favor, ingresa una distancia válida.";
-      return;
-    }
-
-    let totalEntrega = tarifaBase;
-    if (km > kmBase) {
-      const kmExtra = km - kmBase;
-      totalEntrega += kmExtra * tarifaPorKmExtra;
-    }
-
-    const total = totalEntrega + modelo;
-
-    document.getElementById("resultado").innerText =
-      `🚚 Costo de entrega: $${totalEntrega.toFixed(2)}\n` +
-      `🏋️ Costo del modelo: $${modelo.toFixed(2)}\n` +
-      `💵 Total a pagar: $${total.toFixed(2)}`;
   }
+
+  const tarifaBase = 50;
+  const tarifaPorKmExtra = 6;
+  const kmBase = 2;
+  const costoInstalacion = 60; // costo extra por instalación
+
+  if (isNaN(km) || km < 0) {
+    document.getElementById("resultado").textContent =
+      "Por favor, ingresa una distancia válida.";
+    return;
+  }
+
+  let totalEntrega = tarifaBase;
+  if (km > kmBase) {
+    const kmExtra = km - kmBase;
+    totalEntrega += kmExtra * tarifaPorKmExtra;
+  }
+
+  let total = totalEntrega + modelo;
+  if (instalacion) {
+    total += costoInstalacion;
+  }
+
+  document.getElementById("resultado").innerText =
+    `🚚 Costo de entrega: $${totalEntrega.toFixed(2)}\n` +
+    `🏋️ Costo del modelo: $${modelo.toFixed(2)}\n` +
+    (instalacion ? `🔧 Instalación: $${costoInstalacion.toFixed(2)}\n` : "") +
+    `💵 Total a pagar: $${total.toFixed(2)}`;
+}
+

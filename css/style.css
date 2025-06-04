@@ -903,24 +903,27 @@ FOOTER ===========================
 /* Calculadora */
 
 #calculadora-entrega {
-  background-color: #242423;
+  background-color: #333533;
   color: #ffffff;
-  padding: 20px;
-  border-radius: 16px;
-  max-width: 600px;
-  margin: 30px auto;
+  padding: 16px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 20px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
 }
 
+/* Inputs y botones generales */
 #calculadora-entrega input,
 #calculadora-entrega button {
   display: block;
   width: 100%;
-  margin-top: 10px;
-  padding: 10px;
+  margin-top: 8px;
+  padding: 8px;
   border: 1px solid #cfdbd5;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
 #calculadora-entrega button {
@@ -936,68 +939,64 @@ FOOTER ===========================
   background-color: #e6bb4e;
 }
 
-label[for="modelo"] {
-  margin-top: 1.2rem;  /* espacio arriba */
-  display: block;    /* para que tome todo el ancho y el margin funcione bien */
+/* Título y etiquetas */
+#calculadora-entrega h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+#calculadora-entrega label[for="modelo"],
+#calculadora-entrega label[for="km"] {
+  margin-top: 1rem;
+  display: block;
   font-weight: bold;
-  color: #fff;       /* o el color que uses para que contraste */
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
+/* Resultado */
 #resultado {
-  white-space: pre-line; /* para respetar saltos de línea en texto */
-  line-height: 1.6;      /* espacio entre líneas, ajústalo a tu gusto */
-  margin-top: 1rem;      /* espacio arriba, opcional */
+  white-space: pre-line;
+  line-height: 1.4;
+  margin-top: 1rem;
+  font-size: 14px;
 }
 
-
-
+/* Tarjetas modelos */
 .tarjetas-modelos {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 1rem;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .tarjeta-calculadora {
-  position: relative;
   border: 2px solid #242423;
-  border-radius: 12px;
-  padding: 1rem;
-  width: 140px;
-  min-height: 70px;
+  border-radius: 10px;
+  padding: 0.75rem;
+  width: 120px;
+  min-height: 60px;
   text-align: center;
   background-color: #ffffff;
   cursor: pointer;
   transition: all 0.3s ease;
   color: #242423;
-  margin-top: 1rem;
+  font-size: 13px;
 }
 
 .tarjeta-calculadora:hover {
   background-color: #f5cb5c;
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-/* Oculta el radio pero lo deja funcional */
-.tarjeta-calculadora input[type="radio"] {
+.tarjeta-calculadora input[type="radio"],
+.tarjeta-calculadora input[type="checkbox"] {
   display: none;
 }
 
-/* Aplica estilo si está seleccionada */
-.tarjeta-calculadora input[type="radio"]:checked + h5,
-.tarjeta-calculadora input[type="radio"]:checked + h5 + p {
-  color: #242423;
-  font-weight: bold;
-}
-
-.tarjeta-calculadora:has(input[type="radio"]:checked) {
-  background-color: #f5cb5c;
-  color: #242423;
-  font-weight: bold;
-}
-
-/* Indicador visual con check */
 .tarjeta-calculadora input[type="radio"]:checked + h5::after {
   content: " ✓";
   color: #000000;
@@ -1005,26 +1004,139 @@ label[for="modelo"] {
   font-weight: bold;
 }
 
+.tarjeta-calculadora input[type="radio"]:checked + h5,
+.tarjeta-calculadora input[type="radio"]:checked + h5 + p,
+.tarjeta-calculadora input[type="checkbox"]:checked + h5,
+.tarjeta-calculadora input[type="checkbox"]:checked + h5 + p {
+  color: #242423;
+  font-weight: bold;
+}
+
+.tarjeta-calculadora:has(input:checked) {
+  background-color: #f5cb5c;
+  color: #242423;
+  font-weight: bold;
+}
+
+/* Unidad junto al input */
 .input-con-unidad {
   position: relative;
   width: 100%;
-  max-width: 150px;
+  max-width: 140px;
+  margin: 0 auto;
 }
 
 .input-con-unidad input {
-  width: 100%;
-  padding-right: 50px; /* espacio para el texto 'km' */
-  box-sizing: border-box;
+  padding-right: 50px;
 }
 
 .input-con-unidad .unidad {
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   color: #666;
-  pointer-events: none;
   font-weight: bold;
+  pointer-events: none;
+}
+
+/* Instalación */
+.instalacion-container {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.instalacion-container input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.instalacion-container label {
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Mapa (ajustable con JS también) */
+#mapa {
+  height: 180px;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+}
+
+/* Responsive: compactar aún más en móviles */
+@media (max-width: 480px), (max-height: 700px) {
+  #calculadora-entrega {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  #calculadora-entrega h2 {
+    font-size: 1rem;
+  }
+
+  .tarjeta-calculadora {
+    width: 100px;
+    min-height: 55px;
+    padding: 0.5rem;
+    font-size: 12px;
+  }
+
+  #mapa {
+    height: 140px;
+  }
+
+  #calculadora-entrega button {
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .input-con-unidad {
+    max-width: 120px;
+  }
+}
+/* Aumentar ancho en computadoras */
+@media (min-width: 768px) {
+  #calculadora-entrega {
+    max-width: 800px; /* Antes: 500px o 600px */
+  }
+
+  .tarjetas-modelos {
+    gap: 1.5rem;
+    justify-content: space-around;
+  }
+
+  .tarjeta-calculadora {
+    width: 160px;
+  }
+
+  .input-con-unidad {
+    max-width: 180px;
+  }
+
+  #mapa {
+    height: 220px; /* puede ser un poco más alto también */
+  }
+
+  #calculadora-entrega button {
+    max-width: 250px;
+    margin: 10px auto;
+  }
+
+  .instalacion-container {
+    justify-content: center;
+  }
+}
+
+.tarjeta-calculadora h5 {
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.2;
+  font-size: 14px; /* Opcional: ajusta según tu diseño */
 }
 
 

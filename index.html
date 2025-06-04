@@ -223,8 +223,7 @@
       <label for="km">
         <strong>
           1. Haz clic en el mapa para marcar tu ubicación. <br />
-          2. Luego, selecciona el metro más cercano: Metro Chabacano o Metro
-          Guelatao. <br />
+          2. Luego, selecciona la zona más cercana: Zona Centro o Zona Oriente. <br />
           3. Calcularemos la distancia automáticamente. <br />
           4. Selecciona el modelo de equipo que deseas comprar. <br />
           5. Presiona "Calcular total".
@@ -237,8 +236,8 @@
       ></div>
 
       <div style="display: flex; gap: 1rem; margin-bottom: 1rem">
-        <button onclick="usarMetro('guelatao')">Usar Metro Guelatao</button>
-        <button onclick="usarMetro('chabacano')">Usar Metro Chabacano</button>
+        <button onclick="usarMetro('guelatao')">Zona Oriente</button>
+        <button onclick="usarMetro('chabacano')">Zona Centro</button>
       </div>
 
       <div class="input-con-unidad">
@@ -255,6 +254,7 @@
 
       <label for="modelo"><strong>Selecciona un modelo:</strong></label>
       <div class="tarjetas-modelos">
+        <!-- Tarjetas de modelos -->
         <label class="tarjeta-calculadora">
           <input type="radio" name="modelo" value="850" checked />
           <h5>Modelo #1</h5>
@@ -271,6 +271,13 @@
           <input type="radio" name="modelo" value="550" />
           <h5>Modelo #3</h5>
           <p>$550</p>
+        </label>
+
+        <!-- Tarjeta de instalación -->
+        <label class="tarjeta-calculadora">
+          <input type="radio" id="instalacion" />
+          <h5>Instalación</h5>
+          <p>+ $60</p>
         </label>
       </div>
 
