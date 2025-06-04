@@ -900,9 +900,132 @@ FOOTER ===========================
   font-style: italic;
 }
 
-/*
-DISEÑO PARA MODO NOCHE ======================================
-*/
+/* Calculadora */
+
+#calculadora-entrega {
+  background-color: #242423;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#calculadora-entrega input,
+#calculadora-entrega button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #cfdbd5;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#calculadora-entrega button {
+  background-color: #f5cb5c;
+  border: none;
+  color: #242423;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#calculadora-entrega button:hover {
+  background-color: #e6bb4e;
+}
+
+label[for="modelo"] {
+  margin-top: 1.2rem;  /* espacio arriba */
+  display: block;    /* para que tome todo el ancho y el margin funcione bien */
+  font-weight: bold;
+  color: #fff;       /* o el color que uses para que contraste */
+}
+
+#resultado {
+  white-space: pre-line; /* para respetar saltos de línea en texto */
+  line-height: 1.6;      /* espacio entre líneas, ajústalo a tu gusto */
+  margin-top: 1rem;      /* espacio arriba, opcional */
+}
+
+
+
+.tarjetas-modelos {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tarjeta-calculadora {
+  position: relative;
+  border: 2px solid #242423;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 140px;
+  min-height: 70px;
+  text-align: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #242423;
+  margin-top: 1rem;
+}
+
+.tarjeta-calculadora:hover {
+  background-color: #f5cb5c;
+  transform: scale(1.05);
+}
+
+/* Oculta el radio pero lo deja funcional */
+.tarjeta-calculadora input[type="radio"] {
+  display: none;
+}
+
+/* Aplica estilo si está seleccionada */
+.tarjeta-calculadora input[type="radio"]:checked + h5,
+.tarjeta-calculadora input[type="radio"]:checked + h5 + p {
+  color: #242423;
+  font-weight: bold;
+}
+
+.tarjeta-calculadora:has(input[type="radio"]:checked) {
+  background-color: #f5cb5c;
+  color: #242423;
+  font-weight: bold;
+}
+
+/* Indicador visual con check */
+.tarjeta-calculadora input[type="radio"]:checked + h5::after {
+  content: " ✓";
+  color: #000000;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+.input-con-unidad {
+  position: relative;
+  width: 100%;
+  max-width: 150px;
+}
+
+.input-con-unidad input {
+  width: 100%;
+  padding-right: 50px; /* espacio para el texto 'km' */
+  box-sizing: border-box;
+}
+
+.input-con-unidad .unidad {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+  font-weight: bold;
+}
 
 
 
